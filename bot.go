@@ -47,7 +47,7 @@ type Response struct {
 	Original string `json:"original"`
 }
 
-func checkGrammar(ctx context.Context, text string) (string, error) {
+func checkGrammar(text string) (string, error) {
 	url := "https://grammar-genius.p.rapidapi.com/dev/grammar/"
 
 	payload := strings.NewReader(fmt.Sprintf("{\n    \"text\": \"%s\"\n}", text))
@@ -84,7 +84,7 @@ func (b *Bot) Start(ctx context.Context) {
 			continue
 		}
 
-		fixed, err := checkGrammar(ctx, update.Message.Text)
+		fixed, err := checkGrammar(update.Message.Text)
 		if err != nil {
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("Can't heck grammar, err: ", err))
 			if _, err := b.bot.Send(msg); err != nil {

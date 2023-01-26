@@ -10,5 +10,6 @@ func main() {
 		panic(err)
 	}
 
+	// start
 	bot.Start(context.Background())
 }
