@@ -1,3 +1,4 @@
 config.yaml
 .idea
 bot_token
+.DS_Store
