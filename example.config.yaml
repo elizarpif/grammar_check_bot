@@ -1,0 +1,5 @@
+grammar:
+  url: "https://grammar-genius.p.rapidapi.com/dev/grammar/"
+  api_key: "12345678"
+  host: "grammar-genius.p.rapidapi.com"
+bot_token: "12345678"
